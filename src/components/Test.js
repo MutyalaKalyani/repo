@@ -8,13 +8,15 @@ const Test = () => {
   const [loading, setLoading] = useState(false);
   const [previewUrl, setPreviewUrl] = useState(null);
   const [confidence,setConfidence]=useState(null)
-  const File = useRef(null);
+  const File=useRef(null);
   useEffect(() => {
+    
     const func = () => {
       if (!file) {
+        setPreviewUrl(null)
+        setData(null)
         return;
       }
-
       const reader = new FileReader();
 
       reader.onloadend = () => {
@@ -48,8 +50,8 @@ const Test = () => {
   const clearHandler=()=>{
     setFile(null)
     if (File.current) {
-       File.current.value = ''; // Clear the file input field
-    }
+      File.current.value = ''; // Clear the file input field
+   }
     setData(null)
     setPreviewUrl(null);
     setLoading(false)
@@ -57,8 +59,8 @@ const Test = () => {
   return (
     <>
 
-      <div class="form-label d-flex justify-content-evenly align-items-center home_container row">
-        <div className="form_container col-8 col-md-6 col-lg-4">
+      <div class="form-label d-flex justify-content-evenly align-items-center row">
+        <div className="form_container col-10 col-md-5 col-lg-4 mb-3">
           <form onSubmit={upload}>
             <label for="formFile" class="form-label d-block home_label">
               select file
@@ -101,13 +103,14 @@ const Test = () => {
         </div>
           </form>
         </div>
-        {previewUrl && (<div className="card" style={{ width: '450px'} } >
+        {previewUrl && (<div className="card col-10 col-md-5 col-lg-4" style={{ marginTop: "5vh"}}  >
           <h5 className="card-title mt-2">Preview:</h5>
-              <img src={previewUrl} className="card-img  mb-3" alt="Preview" style={{width:'424.4px',height:'242.512px'}}/>
+              <img src={previewUrl} className="card-img  mb-3" alt="Preview"/>
               </div>
         )}
       </div>
-      <Result data={data} confidence={confidence} />
+      <div>
+      <Result data={data} confidence={confidence}  /></div>
     </>
   );
 };

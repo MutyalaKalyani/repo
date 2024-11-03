@@ -1,13 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 
-
-.home_container{
-    height: 65vh;
-    width: 100%;
-}
 .form_container
 {
+    margin-top: 5vh;
+    max-width: 100%;
     background-color: aliceblue ;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;;
     height:18rem;
@@ -24,9 +21,8 @@
     font-style: normal;
 }
 .file_info{
-    display: inline-block;
-    width: 100%;
-    margin-left:30%;
+    display:block;
+   text-align: center;
     color: black;
 }
 .form_input{
@@ -50,7 +46,4 @@ button{
     font-size: 20px;
     border-radius: 5px;
 }
-.result{
-    background-color: aliceblue;
 
-}

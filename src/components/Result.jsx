@@ -1,8 +1,7 @@
 import React, { memo } from "react";
-import "./Test.css";
 const Result = ({ data,confidence }) => {
   return (
-    <div className="d-flex justify-content-center align-items-center">
+    <div className="d-flex justify-content-center align-items-center my-5">
      {data && <div class="toast show">
     <div class="toast-header text-secondary">
       <strong class="me-auto">Image Uploaded</strong>
